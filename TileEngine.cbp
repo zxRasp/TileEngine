@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="TileEngine" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/TileEngine" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/TileEngine" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="`sdl-config --cflags`" />
+		</Compiler>
+		<Linker>
+			<Add option="`sdl-config --libs`" />
+			<Add option="-lSDL_image" />
+		</Linker>
+		<Unit filename="src/Common.h" />
+		<Unit filename="src/Game.cpp" />
+		<Unit filename="src/Game.h" />
+		<Unit filename="src/drawing/Animation.cpp" />
+		<Unit filename="src/drawing/Animation.h" />
+		<Unit filename="src/drawing/Camera.h" />
+		<Unit filename="src/drawing/Frame.cpp" />
+		<Unit filename="src/drawing/Frame.h" />
+		<Unit filename="src/drawing/Graphics.cpp" />
+		<Unit filename="src/drawing/Graphics.h" />
+		<Unit filename="src/drawing/Module.h" />
+		<Unit filename="src/drawing/Sprite.cpp" />
+		<Unit filename="src/drawing/Sprite.h" />
+		<Unit filename="src/drawing/Tile.cpp" />
+		<Unit filename="src/drawing/Tile.h" />
+		<Unit filename="src/drawing/TileMap.cpp" />
+		<Unit filename="src/drawing/TileMap.h" />
+		<Unit filename="src/main.cpp" />
+		<Unit filename="src/managers/LoadManager.cpp" />
+		<Unit filename="src/managers/LoadManager.h" />
+		<Unit filename="src/managers/SpriteManager.cpp" />
+		<Unit filename="src/managers/SpriteManager.h" />
+		<Unit filename="src/managers/StateManager.cpp" />
+		<Unit filename="src/managers/StateManager.h" />
+		<Unit filename="src/managers/SurfaceManager.cpp" />
+		<Unit filename="src/managers/SurfaceManager.h" />
+		<Unit filename="src/managers/TilemapManager.cpp" />
+		<Unit filename="src/managers/TilemapManager.h" />
+		<Unit filename="src/states/GameState.cpp" />
+		<Unit filename="src/states/GameState.h" />
+		<Unit filename="src/states/IState.h" />
+		<Unit filename="src/states/LoadState.cpp" />
+		<Unit filename="src/states/LoadState.h" />
+		<Unit filename="src/util/Collisions.cpp" />
+		<Unit filename="src/util/Collisions.h" />
+		<Unit filename="src/util/Logger.cpp" />
+		<Unit filename="src/util/Logger.h" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
