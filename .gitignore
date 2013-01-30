@@ -1,0 +1,8 @@
+#compiled code
+.o
+.so
+.a
+
+#logs & res
+.log
+.png
