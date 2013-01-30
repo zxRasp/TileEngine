@@ -1,0 +1,22 @@
+#ifndef _CAMERA_H_
+#define _CAMERA_H_
+
+#include "../Common.h"
+#include "Graphics.h"
+
+class Camera
+{
+public:
+    Camera(Graphics* g, RECT drawRect) : m_pGraphics(g), m_DrawRect(drawRect) {}
+
+    Graphics*   getGraphics() const { return m_pGraphics; }
+    RECT        getDrawRect() const { return m_DrawRect; }
+
+    void        move(int dx, int dy) { m_DrawRect.x += dx, m_DrawRect.y += dy; }
+
+private:
+    Graphics* m_pGraphics;
+    RECT      m_DrawRect;
+};
+
+#endif // _CAMERA_H_
