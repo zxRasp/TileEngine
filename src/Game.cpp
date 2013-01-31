@@ -53,30 +53,18 @@ bool Game::init()
 
 void Game::run()
 {
-    Logger::getInstance()->logInfo("Enter to main loop");
     // program main loop
-    const int FPS = 50;
-    const int FRAME_TICK = 1000 / FPS;
-
-    Uint32 next_frame_tick = SDL_GetTicks();
-    Uint32 delay_time = 0;
-
-    Uint64 frames = 0;
+    Logger::getInstance()->logInfo("Enter to main loop");
 
     bool running = true;
+    size_t prevFrameTime = SDL_GetTicks();
+
     while (running)
     {
-        running = StateManager::getInstance()->update(0);
+        size_t currFrameTime = SDL_GetTicks();
+        running = StateManager::getInstance()->update(currFrameTime - prevFrameTime);
         SDL_Flip(SurfaceManager::getInstance()->getCurrScreen());
-
-        next_frame_tick += FRAME_TICK;
-        delay_time = next_frame_tick - SDL_GetTicks();
-
-        if (delay_time > 0)
-            SDL_Delay(delay_time);
-
-        ++frames;
-
+        prevFrameTime = currFrameTime;
     }
     // end main loop
 }
