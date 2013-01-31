@@ -440,7 +440,7 @@
 	<ctime>
 	"Logger.h"
 
-1359490270 source:/home/denis/projects/cpp/TileEngine/src/Game.cpp
+1359633512 source:/home/denis/projects/cpp/TileEngine/src/Game.cpp
 	<sstream>
 	"Common.h"
 	"util/Logger.h"
@@ -460,15 +460,16 @@
 1359482090 /home/denis/projects/cpp/TileEngine/src/Game.h
 	"states/IState.h"
 
-1359491386 source:/home/denis/projects/cpp/TileEngine/src/states/GameState.cpp
+1359635633 source:/home/denis/projects/cpp/TileEngine/src/states/GameState.cpp
 	<SDL.h>
 	"../util/Logger.h"
+	"../util/StringUtil.h"
 	"../managers/SurfaceManager.h"
 	"../managers/StateManager.h"
 	"../managers/TilemapManager.h"
 	"GameState.h"
 
-1359417910 /home/denis/projects/cpp/TileEngine/src/states/GameState.h
+1359636519 /home/denis/projects/cpp/TileEngine/src/states/GameState.h
 	"IState.h"
 	"../drawing/Camera.h"
 
@@ -529,4 +530,8 @@
 1359417324 /home/denis/projects/cpp/TileEngine/src/states/LoadState.h
 	"IState.h"
 	"../managers/LoadManager.h"
+
+1359635192 /home/denis/projects/cpp/TileEngine/src/util/StringUtil.h
+	<sstream>
+	<string>
 
