@@ -346,7 +346,7 @@
 	"Frame.h"
 	"Graphics.h"
 
-1358864370 /home/denis/projects/cpp/TileEngine/src/drawing/Frame.h
+1359643864 /home/denis/projects/cpp/TileEngine/src/drawing/Frame.h
 	<vector>
 	"Module.h"
 	"Graphics.h"
@@ -358,7 +358,7 @@
 	"../Common.h"
 	"Module.h"
 
-1358864534 source:/home/denis/projects/cpp/TileEngine/src/drawing/Frame.cpp
+1359644196 source:/home/denis/projects/cpp/TileEngine/src/drawing/Frame.cpp
 	"Frame.h"
 
 1359414583 source:/home/denis/projects/cpp/TileEngine/src/drawing/Graphics.cpp
@@ -372,7 +372,7 @@
 	<vector>
 	"../Common.h"
 
-1359414609 source:/home/denis/projects/cpp/TileEngine/src/drawing/Sprite.cpp
+1359643781 source:/home/denis/projects/cpp/TileEngine/src/drawing/Sprite.cpp
 	"../util/Logger.h"
 	"Sprite.h"
 	"../managers/SurfaceManager.h"
@@ -381,7 +381,7 @@
 	<string>
 	<fstream>
 
-1358885209 /home/denis/projects/cpp/TileEngine/src/drawing/Sprite.h
+1359643606 /home/denis/projects/cpp/TileEngine/src/drawing/Sprite.h
 	<vector>
 	<istream>
 	"Module.h"
@@ -413,20 +413,20 @@
 	"Graphics.h"
 	"Sprite.h"
 
-1359419160 source:/home/denis/projects/cpp/TileEngine/src/drawing/TileMap.cpp
+1359662765 source:/home/denis/projects/cpp/TileEngine/src/drawing/TileMap.cpp
 	<fstream>
 	"TileMap.h"
 	"../managers/SpriteManager.h"
 	"../util/Collisions.h"
 	"../util/Logger.h"
 
-1359067719 /home/denis/projects/cpp/TileEngine/src/drawing/TileMap.h
+1359659267 /home/denis/projects/cpp/TileEngine/src/drawing/TileMap.h
 	<vector>
 	<string>
 	"Camera.h"
 	"Tile.h"
 
-1359398241 /home/denis/projects/cpp/TileEngine/src/drawing/Camera.h
+1359653457 /home/denis/projects/cpp/TileEngine/src/drawing/Camera.h
 	"../Common.h"
 	"Graphics.h"
 
@@ -460,18 +460,21 @@
 1359482090 /home/denis/projects/cpp/TileEngine/src/Game.h
 	"states/IState.h"
 
-1359635633 source:/home/denis/projects/cpp/TileEngine/src/states/GameState.cpp
+1359662444 source:/home/denis/projects/cpp/TileEngine/src/states/GameState.cpp
+	<string>
 	<SDL.h>
 	"../util/Logger.h"
 	"../util/StringUtil.h"
 	"../managers/SurfaceManager.h"
+	"../managers/SpriteManager.h"
 	"../managers/StateManager.h"
 	"../managers/TilemapManager.h"
 	"GameState.h"
 
-1359636519 /home/denis/projects/cpp/TileEngine/src/states/GameState.h
+1359658947 /home/denis/projects/cpp/TileEngine/src/states/GameState.h
 	"IState.h"
 	"../drawing/Camera.h"
+	"../actors/Player.h"
 
 1359408405 source:/home/denis/projects/cpp/TileEngine/src/states/StateManager.cpp
 	"StateManager.h"
@@ -499,7 +502,7 @@
 1359482014 source:/home/denis/projects/cpp/TileEngine/src/managers/StateManager.cpp
 	"StateManager.h"
 
-1359414547 source:/home/denis/projects/cpp/TileEngine/src/managers/SurfaceManager.cpp
+1359649848 source:/home/denis/projects/cpp/TileEngine/src/managers/SurfaceManager.cpp
 	<algorithm>
 	<SDL_image.h>
 	"SurfaceManager.h"
@@ -522,7 +525,7 @@
 	<string>
 	"../drawing/TileMap.h"
 
-1359419219 source:/home/denis/projects/cpp/TileEngine/src/states/LoadState.cpp
+1359664699 source:/home/denis/projects/cpp/TileEngine/src/states/LoadState.cpp
 	"../managers/StateManager.h"
 	"LoadState.h"
 	"GameState.h"
@@ -534,4 +537,15 @@
 1359635192 /home/denis/projects/cpp/TileEngine/src/util/StringUtil.h
 	<sstream>
 	<string>
+
+1359664546 source:/home/denis/projects/cpp/TileEngine/src/actors/Player.cpp
+	"Player.h"
+
+1359657471 /home/denis/projects/cpp/TileEngine/src/actors/Player.h
+	"../drawing/Sprite.h"
+	"Actor.h"
+
+1359657345 /home/denis/projects/cpp/TileEngine/src/actors/Actor.h
+	"../Common.h"
+	"../drawing/Camera.h"
 

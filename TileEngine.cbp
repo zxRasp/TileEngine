@@ -39,6 +39,9 @@
 		<Unit filename="src/Common.h" />
 		<Unit filename="src/Game.cpp" />
 		<Unit filename="src/Game.h" />
+		<Unit filename="src/actors/Actor.h" />
+		<Unit filename="src/actors/Player.cpp" />
+		<Unit filename="src/actors/Player.h" />
 		<Unit filename="src/drawing/Animation.cpp" />
 		<Unit filename="src/drawing/Animation.h" />
 		<Unit filename="src/drawing/Camera.h" />

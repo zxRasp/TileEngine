@@ -1,14 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Release" />
-	<File name="src/Game.cpp" open="1" top="1" tabpos="6">
-		<Cursor position="1380" topLine="51" />
+	<File name="src/Game.cpp" open="0" top="0" tabpos="6">
+		<Cursor position="1219" topLine="51" />
 	</File>
 	<File name="src/Game.h" open="0" top="0" tabpos="0">
 		<Cursor position="61" topLine="0" />
 	</File>
+	<File name="src/actors/Actor.h" open="0" top="0" tabpos="0">
+		<Cursor position="229" topLine="0" />
+	</File>
+	<File name="src/actors/Player.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="383" topLine="0" />
+	</File>
+	<File name="src/actors/Player.h" open="0" top="0" tabpos="0">
+		<Cursor position="70" topLine="0" />
+	</File>
 	<File name="src/drawing/Camera.h" open="0" top="0" tabpos="0">
 		<Cursor position="52" topLine="0" />
+	</File>
+	<File name="src/drawing/Frame.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="207" topLine="0" />
+	</File>
+	<File name="src/drawing/Frame.h" open="0" top="0" tabpos="0">
+		<Cursor position="391" topLine="17" />
 	</File>
 	<File name="src/drawing/Graphics.cpp" open="0" top="0" tabpos="0">
 		<Cursor position="93" topLine="0" />
@@ -20,7 +35,10 @@
 		<Cursor position="53" topLine="0" />
 	</File>
 	<File name="src/drawing/Sprite.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="70" topLine="0" />
+		<Cursor position="943" topLine="23" />
+	</File>
+	<File name="src/drawing/Sprite.h" open="0" top="0" tabpos="0">
+		<Cursor position="303" topLine="8" />
 	</File>
 	<File name="src/drawing/TileMap.cpp" open="0" top="0" tabpos="7">
 		<Cursor position="306" topLine="0" />
@@ -31,7 +49,7 @@
 	<File name="src/managers/LoadManager.cpp" open="0" top="0" tabpos="0">
 		<Cursor position="1227" topLine="11" />
 	</File>
-	<File name="src/managers/LoadManager.h" open="1" top="0" tabpos="3">
+	<File name="src/managers/LoadManager.h" open="0" top="0" tabpos="3">
 		<Cursor position="439" topLine="24" />
 	</File>
 	<File name="src/managers/SpriteManager.cpp" open="0" top="0" tabpos="0">
@@ -58,19 +76,19 @@
 	<File name="src/managers/TilemapManager.h" open="0" top="0" tabpos="0">
 		<Cursor position="359" topLine="0" />
 	</File>
-	<File name="src/states/GameState.cpp" open="1" top="0" tabpos="5">
+	<File name="src/states/GameState.cpp" open="0" top="0" tabpos="5">
 		<Cursor position="1162" topLine="42" />
 	</File>
-	<File name="src/states/GameState.h" open="1" top="0" tabpos="4">
+	<File name="src/states/GameState.h" open="0" top="0" tabpos="4">
 		<Cursor position="197" topLine="0" />
 	</File>
 	<File name="src/states/IState.h" open="0" top="0" tabpos="0">
 		<Cursor position="73" topLine="0" />
 	</File>
-	<File name="src/states/LoadState.cpp" open="1" top="0" tabpos="2">
-		<Cursor position="429" topLine="0" />
+	<File name="src/states/LoadState.cpp" open="1" top="1" tabpos="0">
+		<Cursor position="368" topLine="0" />
 	</File>
-	<File name="src/states/LoadState.h" open="1" top="0" tabpos="1">
+	<File name="src/states/LoadState.h" open="0" top="0" tabpos="1">
 		<Cursor position="103" topLine="0" />
 	</File>
 	<File name="src/util/Collisions.cpp" open="0" top="0" tabpos="0">
