@@ -5,12 +5,13 @@
 #include "../util/Logger.h"
 #include "../util/StringUtil.h"
 #include "../managers/SurfaceManager.h"
+#include "../managers/SpriteManager.h"
 #include "../managers/StateManager.h"
 #include "../managers/TilemapManager.h"
 
 #include "GameState.h"
 
-GameState::GameState() : m_frames(0), m_time(0) {}
+GameState::GameState() : m_pPlayer(0), m_playerAction(IDLE), m_frames(0), m_time(0) {}
 
 void GameState::init()
 {
@@ -21,11 +22,16 @@ void GameState::init()
     viewRect.y = 0;
     viewRect.w = 800;
     viewRect.h = 600;
+
+    TileMap* currMap = TilemapManager::getInstance()->getTilemapById(0);
+    m_WorldSize = currMap->getWidth() * currMap->getTileWidth();
     m_pCamera = new Camera(m_pGraphics, viewRect);
+    m_pPlayer = new Player(SpriteManager::getInstance()->getSpriteById(4), 64, 384);
 }
 
 void GameState::destroy()
 {
+    delete m_pPlayer;
     delete m_pCamera;
     delete m_pGraphics;
     Logger::getInstance()->logInfo("GameState::destroy()");
@@ -34,7 +40,6 @@ void GameState::destroy()
 void GameState::update(size_t dt)
 {
     bool exit = false;
-    int velocityX = 0;
     // message processing loop
     SDL_Event event;
     while (SDL_PollEvent(&event))
@@ -42,24 +47,35 @@ void GameState::update(size_t dt)
         // check for messages
         switch (event.type)
         {
-            // exit if the window is closed
             case SDL_QUIT:
                 exit = true;
                 break;
 
-                // check for keypresses
             case SDL_KEYDOWN:
-                // exit if ESCAPE is pressed
                 if (event.key.keysym.sym == SDLK_ESCAPE)
                     exit = true;
                 else if (event.key.keysym.sym == SDLK_RIGHT)
-                    velocityX += 1;
+                    m_playerAction = ActorActions::MOVE_RIGHT;
                 else if (event.key.keysym.sym == SDLK_LEFT)
-                    velocityX -= 1;
+                    m_playerAction = ActorActions::MOVE_LEFT;
+                break;
+
+            case SDL_KEYUP:
+                if (event.key.keysym.sym == SDLK_LEFT ||
+                    event.key.keysym.sym == SDLK_RIGHT)
+                    m_playerAction = ActorActions::IDLE;
                 break;
 
         } // end switch
     } // end of message processing
+
+    TilemapManager::getInstance()->getTilemapById(0)->update(dt);
+    m_pPlayer->doAction(m_playerAction);
+    m_pPlayer->update(dt);
+
+    if (m_playerAction == ActorActions::MOVE_LEFT ||
+        m_playerAction == ActorActions::MOVE_RIGHT)
+        updateCameraPos();
 
     ++m_frames;
     m_time += dt;
@@ -82,4 +98,15 @@ void GameState::update(size_t dt)
 void GameState::render()
 {
     TilemapManager::getInstance()->getTilemapById(0)->renderTo(*m_pCamera);
+    m_pPlayer->draw(*m_pCamera);
+}
+
+void GameState::updateCameraPos()
+{
+    float playerXPos = m_pPlayer->getBounds().x - m_pPlayer->getBounds().w / 2;
+
+    float newX = std::max(0.0f, playerXPos - m_pCamera->getDrawRect().w / 2);
+    newX = std::min(newX, (float) (m_WorldSize - m_pCamera->getDrawRect().w));
+
+    m_pCamera->move(newX, 0);
 }

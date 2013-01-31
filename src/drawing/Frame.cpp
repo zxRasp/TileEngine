@@ -43,5 +43,14 @@ void Frame::draw(Graphics& g, int x, int y, int anchor, bool isDebug)
         g.drawLine(x - 4, y - 4, x + 4, y + 4, 0xFF0088FF);
         g.drawLine(x + 4, y - 4, x - 4, y + 4, 0xFF0088FF);
     }
+}
 
+int Frame::getWidth()  const
+{
+    return m_Width;
+}
+
+int Frame::getHeight() const
+{
+    return m_Height;
 }

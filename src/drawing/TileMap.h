@@ -16,6 +16,14 @@ public:
     void update         (size_t dt);
     void renderTo       (const Camera& cam);
 
+    //getters
+
+    size_t getWidth()  const;
+    size_t getHeight() const;
+
+    size_t getTileWidth()  const;
+    size_t getTileHeight() const;
+
 private:
     std::vector<Tile> m_Tiles;
 

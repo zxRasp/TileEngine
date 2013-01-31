@@ -12,7 +12,7 @@ public:
     Graphics*   getGraphics() const { return m_pGraphics; }
     RECT        getDrawRect() const { return m_DrawRect; }
 
-    void        move(int dx, int dy) { m_DrawRect.x += dx, m_DrawRect.y += dy; }
+    void        move(int x, int y) { m_DrawRect.x = x, m_DrawRect.y = y; }
 
 private:
     Graphics* m_pGraphics;

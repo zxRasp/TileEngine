@@ -22,6 +22,12 @@ PSURFACE SurfaceManager::loadSurfaceFromFile(std::string filename)
     {
         PSURFACE result = SDL_DisplayFormat(tmp);
         SDL_FreeSurface(tmp);
+
+        // set transparent color
+        Uint32 transparentColor = SDL_MapRGB(result->format, 0x80, 0, 0x80);
+        SDL_SetColorKey(result, SDL_SRCCOLORKEY, transparentColor);
+
+        // store surface
         m_AllSurfaces.push_back(result);
         return result;
     }

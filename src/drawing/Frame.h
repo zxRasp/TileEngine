@@ -33,6 +33,9 @@ public:
     void addModule(Module* m, int x, int y);
     void draw(Graphics& g, int x, int y, int anchor = 0, bool isDebug = false);
 
+    int getWidth()  const;
+    int getHeight() const;
+
 private:
     std::vector<ModuleEntry> m_ModulesEnties;
     int m_Width;

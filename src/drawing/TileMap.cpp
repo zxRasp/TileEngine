@@ -33,18 +33,26 @@ bool TileMap::loadFromFile(const std::string& fileName)
     for (int i = 0; i < tilesCount; ++i)
     {
         Tile tile;
-        int spriteId, animId, frameId, x, y, anchor;
-        ifs >> spriteId >> animId >> frameId >> x >> y >> anchor;
-        Sprite* sp = SpriteManager::getInstance()->getSpriteById(spriteId);
-
-        if (!sp)
+        int spritesCount;
+        ifs >> spritesCount;
+        for (int j = 0; j < spritesCount; ++j)
         {
-            Logger::getInstance()->logError("Invalid sprite in tileset!");
-            return false;
+            int spriteId, animId, frameId, x, y, anchor;
+            ifs >> spriteId >> animId >> frameId >> x >> y >> anchor;
+            Sprite* sp = SpriteManager::getInstance()->getSpriteById(spriteId);
+
+            if (!sp)
+            {
+                Logger::getInstance()->logError("Invalid sprite in tileset!");
+                return false;
+            }
+
+            if (animId != -1)
+                sp->playAnimation(animId, true);
+
+            tile.addSprite(sp, animId, frameId, x, y, anchor);
         }
 
-
-        tile.addSprite(sp, animId, frameId, x, y, anchor);
         m_Tiles.push_back(tile);
     }
 
@@ -80,4 +88,24 @@ void TileMap::renderTo(const Camera& cam)
 
         ++tileNumber;
     }
+}
+
+size_t TileMap::getWidth()  const
+{
+    return m_Width;
+}
+
+size_t TileMap::getHeight() const
+{
+    return m_Height;
+}
+
+size_t TileMap::getTileWidth()  const
+{
+    return m_TileW;
+}
+
+size_t TileMap::getTileHeight() const
+{
+    return m_TileH;
 }

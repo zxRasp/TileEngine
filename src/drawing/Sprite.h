@@ -22,6 +22,10 @@ public:
     void stopAnimation  (size_t animId);
     void updateAnimation(size_t animId, size_t dt);
 
+    // getters
+    const Frame&        getFrame     (size_t frameId) const;
+    const Animation&    getAnimation (size_t animId)  const;
+
     // draw
     void drawFrame      (Graphics g, size_t frameId, int x, int y, int anchor = 0);
     void drawAnimation  (Graphics g, size_t animId,  int x, int y, int anchor = 0);

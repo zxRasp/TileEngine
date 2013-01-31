@@ -35,6 +35,16 @@ void Sprite::updateAnimation(size_t animId, size_t dt)
     m_Animations[animId].update(dt);
 }
 
+// getters
+const Frame& Sprite::getFrame (size_t frameId) const
+{
+    return m_Frames[frameId];
+}
+
+const Animation& Sprite::getAnimation (size_t animId) const
+{
+    return m_Animations[animId];
+}
 
 // loading sprite data
 
