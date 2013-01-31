@@ -1,11 +1,16 @@
+#include <string>
+
 #include <SDL.h>
 
 #include "../util/Logger.h"
+#include "../util/StringUtil.h"
 #include "../managers/SurfaceManager.h"
 #include "../managers/StateManager.h"
 #include "../managers/TilemapManager.h"
 
 #include "GameState.h"
+
+GameState::GameState() : m_frames(0), m_time(0) {}
 
 void GameState::init()
 {
@@ -55,7 +60,20 @@ void GameState::update(size_t dt)
 
         } // end switch
     } // end of message processing
-  //  m_pCamera->move(dt, 0);
+
+    ++m_frames;
+    m_time += dt;
+
+    if (m_time >= 1000)
+    {
+        std::string fps("FPS: ");
+        fps += convertToString(m_frames * 1000 / m_time);
+
+        SDL_WM_SetCaption(fps.c_str(), 0);
+        m_time = 0;
+        m_frames = 0;
+    }
+
 
     if (exit)
         StateManager::getInstance()->popState();
