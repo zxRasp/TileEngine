@@ -1,8 +1,11 @@
 #compiled code
-.o
-.so
-.a
+bin/*
+obj/*
 
 #logs & res
-.log
-.png
+*.log
+*.png
+
+#Code::Blocks specific
+*.layout
+*.depend
